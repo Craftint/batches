@@ -9,7 +9,7 @@ def search_for_serial_or_batch_or_barcode_number(search_value):
 	if barcode_data:
 		return barcode_data
 
-	# search serial no
+	# search serial no and batch
 	serial_no_data = frappe.db.get_value('Serial No', search_value, ['name as serial_no', 'item_code','batch_no'], as_dict=True)
 	if serial_no_data:
 		return serial_no_data
